@@ -1,22 +1,169 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/0c7c21cc95.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-       <h1>Validacion de la Tarjeta de credito</h1>
-       <br>
-       <label >Numero de tarjeta</label>
-       <br>
-       <input type="text" id="numerotarjeta">
-       <br>
-       <button type="submit">Verificar tarjeta</button>
-
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header id="header">
+      <div class="container">
+        <h1>Aero FlySafe <i class="fas fa-plane-departure"></i></h1>
+        <nav class="navegacion">
+          <a href="acceder.html"><i class="far fa-user-circle"></i>Acceder</a>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <div class="seleccion-de-pagina">
+        <br />
+        <div class="selector">
+          <p><span style="color: chocolate">Metodo de Pago</span></p>
+        </div>
+      </div>
+      <br />
+      <div id="formulario-tarjeta" class="formulario-tarjeta">
+        <div id="datos">
+          <h2>Tarjeta Bancaria</h2>
+          <h3>Datos de tu tarjeta bancaria</h3>
+          <!--formulario: pais-->
+          <div class="flexy" id="grupo-pais">
+            <label for="paisdeemision">Pais de emisión:</label>
+            <input type="text" id="pais" name="pais" required />
+          </div>
+          <br />
+          <!--formulario: Nombre-->
+          <div class="flexy" id="grupo-nombre">
+            <label for="username">Nombre del Titular:</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <br />
+          <!--formulario: Apellido-->
+          <div class="flexy" id="grupo-apellido">
+            <label for="apellidos">Apellidos del Titular:</label>
+            <input type="text" id="apellidos" name="apellidos" required />
+          </div>
+          <br />
+          <!--formulario: ciudad-->
+          <div class="flexy" id="grupo-ciudad">
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required />
+          </div>
+          <br />
+          <!--formulario: Direccion-->
+          <div class="flexy" id="grupo-direccion">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required />
+          </div>
+          <br />
+          <!--formulario: Tarjeta-->
+          <div class="flexy" id="grupo-tarjeta">
+            <label for="numerodetarjeta">Numero de tarjeta:</label>
+            <div>
+              <input type="text" id="numerotarjeta" maxlength="16" required />
+              <div id="validacion"></div>
+            </div>
+          </div>
+          <br />
+          <!--formulario: expira-->
+          <div class="flexbox">
+            <div class="grupoexpira">
+              <div class="flexy" id="grupo-caducidad">
+                <label for="selectmes">Caducidad:</label>
+                <br />
+                <div class="flexbox" id="mes-caducidad">
+                  <div class="grupos-select">
+                    <select name="mes" id="selectmes">
+                      <option disabled selected>Mes</option>
+                      <option value="Enero">01</option>
+                      <option value="Febrero">02</option>
+                      <option value="Marzo">03</option>
+                      <option value="Abril">04</option>
+                      <option value="Mayo">05</option>
+                      <option value="Junio">06</option>
+                      <option value="Julio">07</option>
+                      <option value="Agosto">08</option>
+                      <option value="Septiembre">09</option>
+                      <option value="Octubre">10</option>
+                      <option value="Noviembre">11</option>
+                      <option value="Diciembre">12</option>
+                    </select>
+                    <br />
+                  </div>
+                  <div class="grupos-select">
+                    <select name="year" id="selectyear">
+                      <option disabled selected>Año</option>
+                      <option value="2021">21</option>
+                      <option value="2022">22</option>
+                      <option value="2023">23</option>
+                      <option value="2024">24</option>
+                      <option value="2025">25</option>
+                      <option value="2026">26</option>
+                      <option value="2027">27</option>
+                      <option value="2028">28</option>
+                      <option value="2029">29</option>
+                      <option value="2030">30</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="flexy" id="grupo-cvv">
+            <label for="caducidad">Cvv:</label>
+            <input
+              type="text"
+              id="caducidad"
+              name="caducidad"
+              maxlength="3"
+              required
+            />
+          </div>
+          <br />
+          <div class="flexy">
+            <label for="medios de pagos">Medios de Pago</label>
+            <br />
+            <img src="img/visa-mastercard.jpg" alt="logotipotarjetas" />
+          </div>
+        </div>
+      </div>
+      <div class="terminos" id="terminos">
+        <div id="parrafo1">
+          <input name="selectermino" type="checkbox" id="termino" />
+          <div>
+            he leído y acepto los
+            <span style="color: blue"
+              >terminos y condiciones generales de la compra y la politica de
+              cancelación</span
+            >, asi como las condiciones de contrato.
+          </div>
+        </div>
+        <br />
+        <button id="boton">Aceptar y Pagar ahora</button>
+        <br />
+        <label id="precio">Precio Total:</label>
+        <p>USD 560,26</p>
+        <br />
+        <p>
+          con esta compra podrias obtener
+          <span style="color: blue">400 puntos elite y 920 fly.</span>
+          precio total, incluye tarifa aera,tasas (salvo las que se cobren en
+          determinados aeropuertos en el momento de facturar).
+        </p>
+        <br />
+      </div>
+    </main>
+    <footer id="final">
+      <p class="final">Todos los derechos reservados © 2021</p>
+      <br />
+      <p>By Madeleine Guerrero</p>
+    </footer>
     <script src="index.js" type="module"></script>
   </body>
 </html>
